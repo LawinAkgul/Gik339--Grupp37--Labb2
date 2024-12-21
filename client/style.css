@@ -1,0 +1,78 @@
+/* Grundläggande styling */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #2c2c2c; /* Lättare mörk bakgrund för mindre kontrast */
+  color: #f5f5f5; /* Ljusgrå text för mjukare läsning */
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5rem; /* Större rubrikstorlek */
+  color: #fffefd; /* Accentfärg för rubriken */
+}
+
+/* Responsiv grid-layout för användarlistan */
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Något större kort */
+  gap: 20px; /* Större avstånd mellan korten */
+  width: 100%;
+  max-width: 1000px; /* Begränsad maximal bredd */
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+.user-list li {
+  display: flex;
+  flex-direction: column; /* Gör det möjligt att stapla innehåll vertikalt */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(145deg, #3c3c3c, #505050); /* Gradientbakgrund */
+  border-radius: 10px; /* Något mer rundade hörn */
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Djupare skugga */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mjukare animation */
+  color: #ffffff; /* Textfärg */
+}
+
+.user-list li h2 {
+  margin: 10px 0 5px; /* Mellanrum runt rubrik */
+  font-size: 1.5rem;
+  color: #ff9800; /* Accentfärg för namn */
+}
+
+.user-list li p {
+  margin: 5px 0;
+  font-size: 0.9rem; /* Mindre text för detaljer */
+  color: #dcdcdc; /* Ljusgrå för sekundärtext */
+}
+
+/* Interaktiv effekt vid hovring */
+.user-list li:hover {
+  transform: translateY(-5px); /* Lyft kortet något */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Ökad skugga vid hovring */
+}
+
+/* Responsivitet för små skärmar */
+@media (max-width: 768px) {
+  .user-list {
+    grid-template-columns: 1fr; /* En kolumn på små skärmar */
+  }
+
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem; /* Mindre rubrikstorlek för små skärmar */
+  }
+}
